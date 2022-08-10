@@ -8,18 +8,20 @@ import subprocess
 # ======================================================================== #
 
 # Entry point:
+print("\033[34m")
 print("                    ▄                                   ▀██")
 print("▄▄ ▄▄▄   ▄▄▄ ▄▄▄  ▄██▄    ▄▄▄▄  ▄▄▄ ▄▄   ▄▄▄▄     ▄▄▄▄   ██  ▄▄    ▄▄▄▄  ▄▄▄ ▄▄")
 print(" ██  ██   ██  ██   ██   ▄█   ▀▀  ██▀ ▀▀ ▀▀ ▄██  ▄█   ▀▀  ██ ▄▀   ▄█▄▄▄██  ██▀ ▀▀")
 print(" ██  ██   ██  ██   ██   ██       ██     ▄█▀ ██  ██       ██▀█▄   ██       ██")
 print("▄██▄ ██▄  ▀█▄▄▀█▄  ▀█▄▀  ▀█▄▄▄▀ ▄██▄    ▀█▄▄▀█▀  ▀█▄▄▄▀ ▄██▄ ██▄  ▀█▄▄▄▀ ▄██▄\n")
+print("\033[00m")
 
 if len(sys.argv) != 3:
-    print('[>] Usage: nutcracker [fuzzlist] ["command"]')
+    print('\033[34m[>]\033[00m Usage: nutcracker [fuzzlist] ["command"]')
     sys.exit()
 # ======================================================================== #
 # Load fuzzlist:
-print("[>] Loading fuzzlist.")
+print("\033[34m[>]\033[00m Loading fuzzlist.")
 try:
     with open(sys.argv[1], "r") as fzlst:
         fuzz_list = fzlst.read().split("\n")
@@ -29,11 +31,11 @@ except Exception as error:
 
 # ======================================================================== #
 # Prepare logfile:
-print("[>] Creating log file.")
+print("\033[34m[>]\033[00m Creating log file.")
 
 # ======================================================================== #
 # Fuzzing:
-print("[>] Fuzzing!\n")
+print("\033[34m[>]\033[00m Fuzzing!\n")
 log = []
 for input in fuzz_list:
     tmp = "{0} {1}".format(sys.argv[2], input).split(" ")
@@ -46,9 +48,9 @@ for input in fuzz_list:
 
 # ======================================================================== #
 # Logging:
-print("\n[>] Saving log.")
+print("\n\033[34m[>]\033[00m Saving log.")
 with open("nutcracker.log", "w") as fl:
     for entry in log:
         fl.write(entry + "\n")
 # ======================================================================== #
-print("[>] Done. Thank you for using nutcracker today. :)")
+print("\033[34m[>]\033[00m Done. Thank you for using nutcracker today. :)")
