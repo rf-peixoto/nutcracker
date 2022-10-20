@@ -23,8 +23,8 @@ if len(sys.argv) != 3:
 # Load fuzzlist:
 print("\033[34m[>]\033[00m Loading fuzzlist.")
 try:
-    with open(sys.argv[1], "r") as fzlst:
-        fuzz_list = fzlst.read().split("\n")
+    with open(sys.argv[1], "r") as wordlist:
+        fuzz_list = wordlist.read().split("\n")
 except Exception as error:
     print(error)
     sys.exit()
