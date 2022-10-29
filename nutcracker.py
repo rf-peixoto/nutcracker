@@ -17,7 +17,7 @@ print("▄██▄ ██▄  ▀█▄▄▀█▄  ▀█▄▀  ▀█▄▄
 print("\033[00m")
 
 if len(sys.argv) != 3:
-    print('\033[34m[>]\033[00m Usage: nutcracker [fuzzlist] ["command"]')
+    print('\033[34m[*]\033[00m Usage: nutcracker [fuzzlist] ["command"]')
     sys.exit()
 # ======================================================================== #
 # Load fuzzlist:
