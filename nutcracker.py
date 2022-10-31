@@ -39,7 +39,7 @@ print("\033[34m[>]\033[00m Fuzzing!\n")
 log = []
 for input in fuzz_list:
     tmp = "{0} {1}".format(sys.argv[2], input).split(" ")
-    #print("    ... {0}".format(tmp))
+    #print("  {1}  ... {0}".format(tmp), fuzz_list.index(input))
     try:
         subprocess.run(tmp, capture_output=True, shell=False, check=True)
     except Exception as error:
